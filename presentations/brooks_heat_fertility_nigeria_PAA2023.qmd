@@ -1,0 +1,218 @@
+---
+title: "Extreme Heat & Fertility in Nigeria"
+author: "Nina Brooks"
+    
+format: 
+    revealjs:
+        footer: "PAA 2023"
+        institute: "Cascade Tuholske, Kathryn McMahon, and Kwaw Andam"
+        date: "April 14, 2023"
+        date-format: long
+        slide-number: true
+        theme: [moon]
+        preview-links: auto
+        embed-resources: true
+from: markdown+emoji
+execute:
+  echo: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+## Motivation
+
+::: incremental
+-   Climate change is increasing the intensity, frequency, and severity of extreme heat events [(IPCC 2023)]{style="font-size: 0.5em"}.
+-   Impacts on fertility are understudied relative to other demographic processes but link directly to climate projections [(Grace 2017; Kuehn & McCormick 2017; Sellers & Gray 2019)]{style="font-size: 0.5em"}.
+-   Low-income, tropical countries face a triple burden [(Grace 2017; Potts & Henderson 2012)]{style="font-size: 0.5em"}:
+    -   [Climate vulnerability]{style="font-size: 0.7em"}
+    -   [High population growth]{style="font-size: 0.7em"}
+    -   [Poor with weak health systems]{style="font-size: 0.7em"}
+:::
+
+::: notes
+Climate change is increasing the intensity, frequency, and severity of extreme heat events, but our understanding of extreme heat in low-income, tropical countries has been limited by lack of ground-level monitoring data.
+
+There is growing evidence on the effect of heat on demographic processes such as mortality and migration, but much less attention has been given to the effects on fertility. But changing fertility is a potential climate adaptation strategy and heat may also have direct biological impacts on conceptions.
+
+Consequently, low-income tropical countries face a triple burden of high climate vulnerability, high fertility and growing populations, and countries are poor with weak health systems.
+:::
+
+## Evidence on heat & fertility relationship
+
+::: incremental
+-   Extreme heat exposure adversely impacts pregnancy outcomes, such as preterm birth, low birthweight, and miscarriages [(Conte Keivabu et al. 2022; Davenport et al. 2020; Kuehn & McCormick 2017; Beltran et al. 2013)]{style="font-size: 0.5em"}
+-   Extreme heat reduces [(Sellers & Gray 2019)]{style="font-size: 0.5em"} or delays [(Barreca et al. 2018)]{style="font-size: 0.5em"} births in some contexts
+-   Fertility preferences also impacted by heat exposure [(Sellers & Gray 2019; Eissler et al. 2019)]{style="font-size: 0.5em"}
+:::
+
+::: notes
+There is growing, but still minimal, evidence on the effects of heat exposure on fertility, much of it coming from high-income countries.
+
+This literature suggests that extreme heat negatively impacts pregnancy outcomes, which results in fewer births or delays in births.
+
+There is also a smaller literature that has found links between temperature and fertility preferences or intentions, which may be indicative of behavioral changes in fertility.
+:::
+
+## Gaps and methodological issues
+
+::: incremental
+-   Many studies identify potential biological and behavioral pathways:
+    -   [Biological: disease incidence, nutrition, infecundity, thermal stress]{style="font-size: 0.8em"}
+    -   [Behavioral: replacement, coital frequency, labor migration, income shocks]{style="font-size: 0.8em"}
+-   Critical exposure windows
+-   Acute vs. chronic exposure and acclimatization
+-   Differential impact of humid heat
+-   Definitions of extreme heat exposure
+:::
+
+::: notes
+Some of these studies draw on classical demographic theories of determinants of fertility to demonstrate environmental drivers of biological and behavioral determinants of fertility, although it is often difficult to separate the behavioral from the biological, they identify many plausible pathways -- but the role of each is still largely uncertain and context dependent.
+
+Additionally, this literature has identified a number of key issues in the study of climate impacts and fertility, such as identifying critical exposure windows, the difference between acute and chronic exposure and the role of acclimatization, and whether there are differences between definitions heat events and characteristics of heat, such as humid-heat.
+:::
+
+## In this paper...
+
+::: incremental
+-   We focus on Nigeria where hot-humid heat exposure has rapidly increased and fertility is high (avg parity of 4.4)
+-   Examine effects of different definitions of extreme heat exposure on two fertility outcomes
+-   Explore potential mechanisms
+:::
+
+::: notes
+In this paper we focus on Nigeria, which is one of the most climate vulnerable countries in the world. Hot-humid heat exposure has been increasingly rapidly but there are striking geographic differences and a strong north-south gradient in heat, precipitation, and ecological zone. Nigeria also has a large and growing population -- in our sample average parity is 4.4 children per woman -- making it a good setting in which to study the effects of extreme heat on fertility.
+
+We construct multiple measures of extreme heat exposure and examine 2 outcomes related to fertility: conceptions and pregnancy loss and explore several of the hypothesized mechanisms in the literature.
+
+Specifically, by examining both conceptions and pregnancy loss, we try to separate the potential impacts on the ability to conceive from the ability to carry to term.
+:::
+
+## Data
+
+::: columns
+::: {.column width="50%"}
+::: fragment
+Fertility
+
+::: {style="font-size: 0.8em"}
+-   Two waves of Nigeria DHS with fertility calendar module (2008 & 2018)
+-   Outcomes: conception, pregnancy loss
+-   Restrict sample based on length of residence
+-   Organize in "person-period" format for survival analysis
+:::
+:::
+:::
+
+::: {.column width="50%"}
+::: fragment
+Heat
+
+::: {style="font-size: 0.8em"}
+-   Combine CHIRTS daily Tmax record from 1986-2016 with relative humidity to approximate wet-bulb globe temperature (WBGT)
+-   Spatially merge with DHS clusters
+-   Construct several measures of heat exposure during each month (or trimester) of observation
+:::
+:::
+:::
+:::
+
+::: notes
+We use 2 waves of the Nigerian Demographic and Health Data that contain both the fertility calendar module and collected geographic data. The fertility calendar data allows us to identify the conceptions, pregnancy losses, and live births for women in the approximately 60 months preceding the DHS interview.
+
+We restrict the sample according to the length of time women have lived in their current residences so that we can ensure they were exposed to the heat data we are merging in.
+
+As I'll explain further in a moment, we will construct the data in person-period format to analyze conceptions.
+
+To identify extreme heat, we combine the CHIRTS daily temperature record, which is the most accurate daily maximum temperature record for data-sparse regions like sub-Saharan Africa, with relative humidity to approximate wet-bulb globe temperature, which captures the effect of humidity and temperature.
+
+We produce the heat record at a 5-degree spatial resolution and spatially merge it with the DHS data at the cluster level, which corresponds to approximately a village in rural areas or a city block in urban areas, which allows us to identify the heat that women have been exposed to over the entire duration they've lived in their current residence. We take a 10km buffer around each cluster centroid and area-weight the heat data.
+
+We then construct several measures of heat exposure at the monthly level for each month of observation for the calendar and also according to trimesters for when we look at pregnancy losses.
+:::
+
+## Humid Heat Has Increased Along Geographic Gradient
+
+![](../figures/March-2023-Nigeria-WBGT30.png){fig-align="center" width="55%"}
+
+::: notes
+Turning to some descriptive results first, humid heat has increased substantially in Nigeria in the past 30 years. On average, communities (clusters) in the Nigeria DHS experienced around 10 days per year that exceeded 30°C in the 1980s, which rose to over 30 days per year by 2016.
+:::
+
+## Heat is correlated with conception probability
+
+::: fragment
+![](../figures/cumhaz_wbgt_bins_pres.png){fig-align="center"}
+:::
+
+::: notes
+Women experience conceptions at different times and not all women will experience a conception during their recorded fertility calendar. For women who do not experience a conception during the fertility calendar window, their records are therefore right-censored by the date of the interview (the most recent month of record for the fertility calendar). This type of data is well-suited for survival or time-to-event analysis, which accounts for the censoring.
+
+This is a kaplan-meier survival curve of the conception probability in each period, split out by heat exposure in that month. This figure shows relatively proportional probabilities of conception for women experiencing low (19 - 25.4C) and moderate (25.4 - 27.2C) heat, but for women who experience high heat (27.2 - 31.4C) the probability of conception is higher in every month of the fertility calendar after month 5.
+
+For the analysis, we follow a discrete-time approach to model the conditional probability of conception in each month and use a logistic regression function, so we can control for individual and household level characteristics, such as age, marital status, wealth, religion, and parity, and include cluster fixed effects, month fixed effects, and year fixed effects.
+:::
+
+## Humid-heat Increases Probability of Conception
+
+![](../figures/conception_plot_pres.png){fig-align="center"}
+
+::: notes
+Here I am presenting results from the discrete-time models present using two different definitions of hot-humid heat exposure: the mean WBGTmax in the month and the proportion days between 27-30 or over 30 (which are interpreted as relative to the proportion 27 and under). These results suggest that humid-heat exposure increases the probability of conception and in particular much higher temperatures (indicated by a higher fraction of days over 30C).
+
+This is an interesting finding because it diverges from the small literature that exists on the impacts of heat and fertility, which has found a decrease in births following hotter days
+:::
+
+## Humid-heat Increases Probability of Pregnancy Loss
+
+<br>
+
+::: fragment
+![](../figures/term_trim_plot_pres){fig-align="center"}
+:::
+
+::: notes
+To analyze the association between heat exposure and pregnancy loss, we construct a dataset at the pregnancy level from the calendar data, where each pregnancy either ends in a live birth or is lost and calculate heat exposure within trimesters. We estimate logistic regressions, controlling for the same individual and community level characteristics and fixed effects as the discrete time models.
+
+These results suggest that heat exposure increases the probability of pregnancy loss in the first 2 trimesters. For the proportion of the hottest days (over 30), the hazard ratios are large but we may be underpowered given pregnancy loss is a rare outcome and there are fewer days that exceed this temperature.
+:::
+
+## Heterogeneous Patterns For Conception
+
+![](../figures/conception_heterogeneity.png){fig-align="center"}
+
+::: notes
+To explore potential mechanisms, in particular because the finding of an increase in conception probability differs from past studies, we split the sample by different characteristics to explore heterogeneity in the effect of heat exposure.
+
+What we see is that for younger, less educated, and rural women, a greater proportion of days above 30C is associated with an increase in conception.
+
+Fro education, we actually see a negative gradient -- higher heat exposure becomes associated with a lower probability of conception for more educated women, although the confidence intervals are wide.
+
+These differences may reflect a variety of things such as behavioral differences, information, preferences.
+:::
+
+## Conclusion & Next Steps
+
+::: incremental
+-   Preliminary results suggest humid-heat is associated with an increase in conception and pregnancy loss (in the 1st and 2nd trimesters)
+-   Effect is concentrated among younger, less educated, and rural women
+-   Continue exploring heterogeneous effects for conception and pregnancy loss to better understand potential mechanisms
+-   Explore alternative definitions of heat exposure
+:::
+
+::: notes
+Our preliminary results suggest that on average, extreme heat affects terminations, but not conception or births. Given the descriptive differences, we will be exploring heterogeneity in these results by residence and also by parity. We will also examine heterogeneity by whether women have recently lost a pregnancy or child to test the replacement mechanism.
+
+We will also explore intermediary outcomes, such as contraceptive use and fertility intentions and test non-linear specifications.
+
+Finally, once we finish constructing the heat wave data, we will run discrete time event studies to look at time to fertility outcomes following an extreme heat event.
+:::
+
+# Thank You! {style="text-align: center"}
+
+<br> <br> <br> <br> <br> <br>
+
+::: aside
+We graciously acknowledge support from the NASA LCLUC program for this work.
+:::
